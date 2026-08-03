@@ -1,0 +1,14 @@
+{
+  "watch": [
+    "backend"
+  ],
+  "ext": "js,json",
+  "ignore": [
+    "node_modules",
+    "backend/uploads",
+    "backend/generated",
+    "backend/logs"
+  ],
+  "exec": "node backend/server.js",
+  "delay": "500"
+}

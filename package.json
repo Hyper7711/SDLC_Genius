@@ -1,0 +1,55 @@
+{
+  "name": "sdlc-genius",
+  "version": "1.0.0",
+  "description": "SDLC Genius - An AI-Powered Software Engineering Studio",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "author": "Hyper7711",
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node backend/server.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": [
+    "sdlc",
+    "ai",
+    "software-engineering",
+    "langchain",
+    "ollama",
+    "express",
+    "nodejs",
+    "mongodb",
+    "mongoose",
+    "fullstack",
+    "saas"
+  ],
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "compression": "^1.8.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "joi": "^18.0.1",
+    "mongoose": "^8.18.0",
+    "morgan": "^1.10.1",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.34.0",
+    "eslint": "^9.34.0",
+    "globals": "^16.3.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2"
+  }
+}
