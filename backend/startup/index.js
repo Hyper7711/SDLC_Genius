@@ -7,54 +7,64 @@
  * Centralized application bootstrap.
  *
  * Responsibilities:
- *  - Register middleware
- *  - Register routes
- *  - Register error handling
- *  - Initialize future services
+ *  - Register global middleware
+ *  - Register application routes
+ *  - Register 404 middleware
+ *  - Register global error handler
  *
- * Keeping startup logic here prevents app.js from becoming
- * unnecessarily large as the application grows.
+ * NOTE:
+ * This file is responsible ONLY for configuring the
+ * Express application. It does NOT start the HTTP server.
  * ===============================================================
  */
 
 import registerMiddleware from "./middleware.js";
 import registerRoutes from "./routes.js";
 
+import notFoundMiddleware from "../middleware/notFound.middleware.js";
+import errorMiddleware from "../middleware/error.middleware.js";
+
 /**
- * Initializes the complete Express application.
+ * Initialize the Express application.
  *
  * @param {import("express").Express} app
  */
 const initializeApplication = (app) => {
     /**
-     * ------------------------------------------------------------
-     * Register Global Middleware
-     * ------------------------------------------------------------
+     * ===========================================================
+     * Global Middleware
+     * ===========================================================
      */
 
     registerMiddleware(app);
 
     /**
-     * ------------------------------------------------------------
-     * Register Application Routes
-     * ------------------------------------------------------------
+     * ===========================================================
+     * Application Routes
+     * ===========================================================
      */
 
     registerRoutes(app);
 
     /**
-     * ------------------------------------------------------------
-     * Future Startup Modules
-     * ------------------------------------------------------------
+     * ===========================================================
+     * 404 Middleware
+     * ===========================================================
      *
-     * initializeSockets(app);
-     * initializeScheduler();
-     * initializeAIEngine();
-     * initializeMetrics(app);
-     *
+     * Handles requests for routes that do not exist.
      */
 
-    console.log("✓ Application startup completed.");
+    app.use(notFoundMiddleware);
+
+    /**
+     * ===========================================================
+     * Global Error Middleware
+     * ===========================================================
+     *
+     * MUST always be the last middleware.
+     */
+
+    app.use(errorMiddleware);
 };
 
 export default initializeApplication;
