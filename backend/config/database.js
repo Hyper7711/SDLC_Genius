@@ -2,17 +2,20 @@
  * ===============================================================
  * SDLC Genius
  * ---------------------------------------------------------------
- * MongoDB Database Configuration
+ * MongoDB Configuration
  * ---------------------------------------------------------------
  * Responsibilities:
- *  - Connect to MongoDB using Mongoose
- *  - Handle connection success and failure
- *  - Export reusable database connection function
+ *  - Connect to MongoDB
+ *  - Handle connection lifecycle
+ *  - Log connection events
+ *  - Export mongoose instance
  * ===============================================================
  */
 
 import mongoose from "mongoose";
+
 import env from "./env.js";
+import logger from "./logger.js";
 
 /**
  * Connect to MongoDB.
@@ -23,38 +26,47 @@ const connectDatabase = async () => {
     try {
         await mongoose.connect(env.MONGODB_URI);
 
-        console.log("=================================================");
-        console.log("✅ MongoDB Connected Successfully");
-        console.log(`Database : ${mongoose.connection.name}`);
-        console.log(`Host     : ${mongoose.connection.host}`);
-        console.log("=================================================");
+        logger.info("=================================================");
+        logger.info("✅ MongoDB Connected Successfully");
+        logger.info(`Database : ${mongoose.connection.name}`);
+        logger.info(`Host     : ${mongoose.connection.host}`);
+        logger.info("=================================================");
     } catch (error) {
-        console.error("=================================================");
-        console.error("❌ MongoDB Connection Failed");
-        console.error(error.message);
-        console.error("=================================================");
+        logger.error("=================================================");
+        logger.error("❌ MongoDB Connection Failed");
+        logger.error(error.message);
+        logger.error("=================================================");
 
         process.exit(1);
     }
 };
 
 /**
- * MongoDB Connection Events
+ * ===============================================================
+ * Connection Events
+ * ===============================================================
  */
 
 mongoose.connection.on("connected", () => {
-    console.log("📦 MongoDB connection established.");
+    logger.info("📦 MongoDB connection established.");
 });
 
 mongoose.connection.on("disconnected", () => {
-    console.warn("⚠ MongoDB disconnected.");
+    logger.warn("⚠ MongoDB disconnected.");
+});
+
+mongoose.connection.on("reconnected", () => {
+    logger.info("🔄 MongoDB reconnected.");
 });
 
 mongoose.connection.on("error", (error) => {
-    console.error("❌ MongoDB Error:", error.message);
+    logger.error(error);
 });
 
 /**
- * Export Database Connection Function
+ * Export
  */
+
+export { mongoose };
+
 export default connectDatabase;

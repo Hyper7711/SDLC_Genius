@@ -5,10 +5,11 @@
  * Backend Server Entry Point
  * ---------------------------------------------------------------
  * Responsibilities:
- *  - Load application configuration
- *  - Connect to MongoDB
- *  - Start the Express server
+ *  - Load validated application configuration
+ *  - Establish MongoDB connection
+ *  - Start the HTTP server
  *  - Register graceful shutdown handlers
+ *  - Handle server startup errors
  *
  * NOTE:
  * This is the ONLY file responsible for starting
@@ -20,6 +21,7 @@ import app from "./app.js";
 
 import {
     env,
+    constants,
     connectDatabase,
     logger,
 } from "./config/index.js";
@@ -33,7 +35,7 @@ const bootstrap = async () => {
     try {
         /**
          * ----------------------------------------------------------
-         * Connect Database First
+         * Step 1 : Connect Database
          * ----------------------------------------------------------
          */
 
@@ -41,31 +43,44 @@ const bootstrap = async () => {
 
         /**
          * ----------------------------------------------------------
-         * Start Express Server
+         * Step 2 : Start HTTP Server
          * ----------------------------------------------------------
          */
 
         const server = app.listen(env.PORT, () => {
             logger.info("=================================================");
-            logger.info(`🚀 ${env.APP_NAME} Backend Started`);
+            logger.info(`🚀 ${env.APP_NAME} Started Successfully`);
             logger.info("=================================================");
-            logger.info(`Environment : ${env.NODE_ENV}`);
-            logger.info(`Version     : ${env.APP_VERSION}`);
-            logger.info(`Port        : ${env.PORT}`);
-            logger.info(`Node.js     : ${process.version}`);
-            logger.info("=================================================");
+            logger.info(`Version      : ${env.APP_VERSION}`);
+            logger.info(`Environment  : ${env.NODE_ENV}`);
+            logger.info(`Port         : ${env.PORT}`);
+            logger.info(`Node.js      : ${process.version}`);
+            logger.info(`API Base     : ${constants.API.BASE_PATH}`);
             logger.info(
-                `Server URL  : http://localhost:${env.PORT}`
+                `Server URL   : http://localhost:${env.PORT}`
             );
             logger.info(
-                `Health API  : http://localhost:${env.PORT}/api/v1/health`
+                `Health Check : http://localhost:${env.PORT}${constants.API.BASE_PATH}/health`
             );
             logger.info("=================================================");
         });
 
         /**
          * ----------------------------------------------------------
-         * Register Shutdown Handlers
+         * Step 3 : Handle Server Errors
+         * ----------------------------------------------------------
+         */
+
+        server.on("error", (error) => {
+            logger.error("HTTP Server Error");
+            logger.error(error);
+
+            process.exit(1);
+        });
+
+        /**
+         * ----------------------------------------------------------
+         * Step 4 : Register Graceful Shutdown
          * ----------------------------------------------------------
          */
 
@@ -82,6 +97,9 @@ const bootstrap = async () => {
 };
 
 /**
+ * --------------------------------------------------------------
  * Start Application
+ * --------------------------------------------------------------
  */
+
 bootstrap();

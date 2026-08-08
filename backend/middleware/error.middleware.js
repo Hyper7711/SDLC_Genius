@@ -6,11 +6,25 @@
  * ---------------------------------------------------------------
  * Handles every unhandled error in the application.
  *
- * This middleware MUST be the LAST middleware registered.
+ * Responsibilities:
+ *  - Handle AppError
+ *  - Handle Mongoose errors
+ *  - Handle unexpected errors
+ *  - Log errors
+ *  - Return standardized API responses
+ *
+ * NOTE:
+ * This MUST be the last middleware registered.
  * ===============================================================
  */
 
 import ApiResponse from "../utils/ApiResponse.js";
+
+import {
+    env,
+    logger,
+    constants,
+} from "../config/index.js";
 
 /**
  * Global Error Handler
@@ -22,26 +36,35 @@ import ApiResponse from "../utils/ApiResponse.js";
  */
 const errorMiddleware = (err, req, res, next) => {
     /**
-     * Prevent ESLint warning for unused parameter.
+     * Prevent ESLint warning.
      */
     void next;
 
     /**
      * ------------------------------------------------------------
-     * Default Error Values
+     * Default Error
      * ------------------------------------------------------------
      */
-    let statusCode = err.statusCode || 500;
-    let message = err.message || "Internal Server Error";
-    let details = err.details || null;
+
+    let statusCode =
+        err.statusCode ||
+        constants.HTTP_STATUS.INTERNAL_SERVER_ERROR;
+
+    let message =
+        err.message ||
+        "Internal Server Error";
+
+    let details =
+        err.details || null;
 
     /**
      * ------------------------------------------------------------
      * Mongoose Validation Error
      * ------------------------------------------------------------
      */
+
     if (err.name === "ValidationError") {
-        statusCode = 400;
+        statusCode = constants.HTTP_STATUS.BAD_REQUEST;
         message = "Validation failed.";
         details = err.errors;
     }
@@ -51,20 +74,22 @@ const errorMiddleware = (err, req, res, next) => {
      * Invalid MongoDB ObjectId
      * ------------------------------------------------------------
      */
+
     if (err.name === "CastError") {
-        statusCode = 400;
+        statusCode = constants.HTTP_STATUS.BAD_REQUEST;
         message = "Invalid resource identifier.";
     }
 
     /**
      * ------------------------------------------------------------
-     * Duplicate MongoDB Key
+     * Duplicate Key Error
      * ------------------------------------------------------------
      */
+
     if (err.code === 11000) {
-        statusCode = 409;
+        statusCode = constants.HTTP_STATUS.CONFLICT;
         message = "Duplicate resource detected.";
-        details = err.keyValue || null;
+        details = err.keyValue;
     }
 
     /**
@@ -72,24 +97,28 @@ const errorMiddleware = (err, req, res, next) => {
      * Development Logging
      * ------------------------------------------------------------
      */
-    if (process.env.NODE_ENV === "development") {
-        console.error("\n========================================");
-        console.error("❌ Global Error Middleware");
-        console.error("========================================");
-        console.error(err);
-        console.error("========================================\n");
+
+    logger.error("=================================================");
+    logger.error(`${req.method} ${req.originalUrl}`);
+    logger.error(message);
+
+    if (env.NODE_ENV === "development") {
+        logger.error(err.stack);
     }
+
+    logger.error("=================================================");
 
     /**
      * ------------------------------------------------------------
-     * Send Standardized Error Response
+     * Standardized Error Response
      * ------------------------------------------------------------
      */
+
     return ApiResponse.error(
         res,
         message,
         statusCode,
-        process.env.NODE_ENV === "development"
+        env.NODE_ENV === "development"
             ? {
                   details,
                   stack: err.stack,
