@@ -1,1 +1,494 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="SDLC Genius is an AI-powered software engineering studio designed to streamline software development, from requirements to testing."
+    >
+
+    <meta name="theme-color" content="#0b1020">
+
+    <title>SDLC Genius | AI-Powered Software Engineering Studio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+            <a class="brand" href="#home" aria-label="SDLC Genius home">
+                <span class="brand-icon" aria-hidden="true">S</span>
+                <span>SDLC <strong>Genius</strong></span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#features">Features</a>
+                <a href="#workflow">Workflow</a>
+                <a href="#about">About</a>
+
+                <div class="nav-actions">
+                    <a class="btn btn-ghost" href="pages/login.html">
+                        Log in
+                    </a>
+
+                    <a class="btn btn-primary" href="pages/register.html">
+                        Get started <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero section" id="home">
+            <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+            <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="eyebrow">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        AI-POWERED SOFTWARE ENGINEERING
+                    </div>
+
+                    <h1>
+                        Build smarter.
+                        <span class="gradient-text">Develop faster.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Turn your software ideas into structured development
+                        plans with AI. Analyze requirements, generate
+                        documentation, visualize architectures, and streamline
+                        your Software Development Life Cycle in one workspace.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary btn-large" href="pages/register.html">
+                            Start building <span aria-hidden="true">→</span>
+                        </a>
+
+                        <a class="btn btn-secondary btn-large" href="#workflow">
+                            Explore the workflow
+                        </a>
+                    </div>
+
+                    <div class="hero-trust">
+                        <span aria-hidden="true">✦</span>
+                        From software requirements to testing — one workspace.
+                    </div>
+                </div>
+
+                <!-- Product Preview -->
+                <div class="hero-visual">
+                    <div class="dashboard-preview">
+                        <div class="preview-topbar">
+                            <div class="window-dots" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <span class="preview-label">SDLC Workspace</span>
+                            <span class="preview-status">AI Ready</span>
+                        </div>
+
+                        <div class="preview-body">
+                            <aside class="preview-sidebar" aria-label="Preview menu">
+                                <div class="sidebar-logo">S</div>
+                                <span class="sidebar-item active">▦</span>
+                                <span class="sidebar-item">◇</span>
+                                <span class="sidebar-item">⌘</span>
+                                <span class="sidebar-item">⚙</span>
+                            </aside>
+
+                            <div class="preview-main">
+                                <div class="preview-heading">
+                                    <div>
+                                        <span class="preview-overline">YOUR WORKSPACE</span>
+                                        <h2>Project overview</h2>
+                                    </div>
+                                    <span class="preview-avatar">SG</span>
+                                </div>
+
+                                <div class="preview-welcome">
+                                    <span class="preview-sparkle">✦</span>
+                                    <div>
+                                        <strong>Your next idea starts here.</strong>
+                                        <p>Plan, generate, and organize your SDLC.</p>
+                                    </div>
+                                </div>
+
+                                <div class="preview-stats">
+                                    <div class="preview-stat">
+                                        <span>Projects</span>
+                                        <strong>01</strong>
+                                        <small>Workspace preview</small>
+                                    </div>
+
+                                    <div class="preview-stat">
+                                        <span>SDLC stages</span>
+                                        <strong>06</strong>
+                                        <small>Connected workflow</small>
+                                    </div>
+                                </div>
+
+                                <div class="preview-section-heading">
+                                    <strong>Development workflow</strong>
+                                    <span>Overview</span>
+                                </div>
+
+                                <div class="preview-workflow">
+                                    <div class="workflow-step complete">
+                                        <span class="workflow-number">01</span>
+                                        <div>
+                                            <strong>Requirements</strong>
+                                            <small>Define the problem</small>
+                                        </div>
+                                        <span class="workflow-check">✓</span>
+                                    </div>
+
+                                    <div class="workflow-step current">
+                                        <span class="workflow-number">02</span>
+                                        <div>
+                                            <strong>System design</strong>
+                                            <small>Plan the architecture</small>
+                                        </div>
+                                        <span class="workflow-arrow">→</span>
+                                    </div>
+
+                                    <div class="workflow-step">
+                                        <span class="workflow-number">03</span>
+                                        <div>
+                                            <strong>Development & testing</strong>
+                                            <small>Build and validate</small>
+                                        </div>
+                                        <span class="workflow-arrow">↗</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="floating-card floating-card-ai">
+                        <span class="floating-icon">✦</span>
+                        <div>
+                            <strong>AI Assistance</strong>
+                            <small>Designed for your workflow</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-card floating-card-doc">
+                        <span class="floating-icon">▤</span>
+                        <div>
+                            <strong>Smart documentation</strong>
+                            <small>Requirements to deliverables</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro Strip -->
+        <section class="intro-strip">
+            <div class="container intro-strip-content">
+                <span>ONE CONNECTED WORKSPACE</span>
+                <div class="intro-divider" aria-hidden="true"></div>
+                <p>Plan clearly. Design confidently. Build systematically.</p>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="section features-section" id="features">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">WHAT YOU CAN DO</span>
+
+                    <h2>
+                        Your development process,
+                        <span class="gradient-text">simplified.</span>
+                    </h2>
+
+                    <p>
+                        Bring essential software engineering activities
+                        together and use AI to reduce repetitive work.
+                    </p>
+                </div>
+
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon icon-purple" aria-hidden="true">
+                            ◈
+                        </div>
+                        <h3>Requirement Analysis</h3>
+                        <p>
+                            Organize software ideas into clear requirements,
+                            functional needs, and structured specifications.
+                        </p>
+                        <a href="#workflow" class="feature-link">
+                            Explore workflow <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon icon-blue" aria-hidden="true">
+                            ⌘
+                        </div>
+                        <h3>AI Documentation</h3>
+                        <p>
+                            Work toward generating SRS documents, use cases,
+                            user stories, and other development artifacts.
+                        </p>
+                        <a href="#workflow" class="feature-link">
+                            Explore workflow <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon icon-cyan" aria-hidden="true">
+                            ⬡
+                        </div>
+                        <h3>Architecture & Diagrams</h3>
+                        <p>
+                            Plan system components and visualize workflows
+                            and software architecture with diagrams.
+                        </p>
+                        <a href="#workflow" class="feature-link">
+                            Explore workflow <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon icon-pink" aria-hidden="true">
+                            ◉
+                        </div>
+                        <h3>Testing Assistance</h3>
+                        <p>
+                            Help prepare test scenarios and test cases
+                            based on your project's requirements.
+                        </p>
+                        <a href="#workflow" class="feature-link">
+                            Explore workflow <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon icon-green" aria-hidden="true">
+                            ▤
+                        </div>
+                        <h3>Project Workspace</h3>
+                        <p>
+                            Keep project information and generated artifacts
+                            organized in a central workspace.
+                        </p>
+                        <a href="#workflow" class="feature-link">
+                            Explore workflow <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon icon-orange" aria-hidden="true">
+                            ↗
+                        </div>
+                        <h3>Development Support</h3>
+                        <p>
+                            Use AI-assisted guidance to support design
+                            decisions, implementation, and problem-solving.
+                        </p>
+                        <a href="#workflow" class="feature-link">
+                            Explore workflow <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+                </div>
+
+                <p class="feature-disclaimer">
+                    These are planned platform capabilities. Each feature
+                    will be connected and verified as development progresses.
+                </p>
+            </div>
+        </section>
+
+        <!-- Workflow -->
+        <section class="section workflow-section" id="workflow">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">THE SDLC WORKFLOW</span>
+
+                    <h2>
+                        From idea to implementation,
+                        <span class="gradient-text">step by step.</span>
+                    </h2>
+
+                    <p>
+                        A structured approach to managing the key stages
+                        of software development.
+                    </p>
+                </div>
+
+                <div class="workflow-grid">
+                    <article class="stage-card">
+                        <span class="stage-number">01</span>
+                        <div class="stage-icon" aria-hidden="true">⌕</div>
+                        <h3>Requirements</h3>
+                        <p>Understand the problem and define project needs.</p>
+                    </article>
+
+                    <article class="stage-card">
+                        <span class="stage-number">02</span>
+                        <div class="stage-icon" aria-hidden="true">◇</div>
+                        <h3>Analysis & Design</h3>
+                        <p>Structure the solution and plan its architecture.</p>
+                    </article>
+
+                    <article class="stage-card">
+                        <span class="stage-number">03</span>
+                        <div class="stage-icon" aria-hidden="true">⌘</div>
+                        <h3>Development</h3>
+                        <p>Translate the design into working software.</p>
+                    </article>
+
+                    <article class="stage-card">
+                        <span class="stage-number">04</span>
+                        <div class="stage-icon" aria-hidden="true">✓</div>
+                        <h3>Testing</h3>
+                        <p>Check functionality and identify defects.</p>
+                    </article>
+
+                    <article class="stage-card">
+                        <span class="stage-number">05</span>
+                        <div class="stage-icon" aria-hidden="true">↗</div>
+                        <h3>Deployment</h3>
+                        <p>Prepare and release the application.</p>
+                    </article>
+
+                    <article class="stage-card">
+                        <span class="stage-number">06</span>
+                        <div class="stage-icon" aria-hidden="true">⟳</div>
+                        <h3>Maintenance</h3>
+                        <p>Improve the software and address future needs.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="section about-section" id="about">
+            <div class="container about-grid">
+                <div class="about-visual" aria-hidden="true">
+                    <div class="about-orbit orbit-one"></div>
+                    <div class="about-orbit orbit-two"></div>
+                    <div class="about-core">
+                        <span>✦</span>
+                        <strong>AI</strong>
+                        <small>+ SDLC</small>
+                    </div>
+                    <div class="orbit-node node-one">SRS</div>
+                    <div class="orbit-node node-two">UML</div>
+                    <div class="orbit-node node-three">QA</div>
+                    <div class="orbit-node node-four">DEV</div>
+                </div>
+
+                <div class="about-content">
+                    <span class="eyebrow">ABOUT SDLC GENIUS</span>
+
+                    <h2>
+                        Software engineering,
+                        <span class="gradient-text">with AI in the loop.</span>
+                    </h2>
+
+                    <p>
+                        SDLC Genius is an AI-powered software engineering
+                        studio designed to help developers streamline
+                        activities throughout the Software Development
+                        Life Cycle.
+                    </p>
+
+                    <p>
+                        The goal is to bring project planning, documentation,
+                        architecture support, and testing assistance into
+                        one organized development environment.
+                    </p>
+
+                    <a class="btn btn-primary" href="pages/register.html">
+                        Join the workspace <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-glow" aria-hidden="true"></div>
+
+                    <div class="cta-content">
+                        <span class="eyebrow">YOUR NEXT PROJECT STARTS HERE</span>
+
+                        <h2>
+                            Have an idea?
+                            <span class="gradient-text">Let's engineer it.</span>
+                        </h2>
+
+                        <p>
+                            Get ready to turn requirements into a structured
+                            software development journey.
+                        </p>
+
+                        <a class="btn btn-primary btn-large" href="pages/register.html">
+                            Get started <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <a class="brand footer-brand" href="#home">
+                <span class="brand-icon" aria-hidden="true">S</span>
+                <span>SDLC <strong>Genius</strong></span>
+            </a>
+
+            <p>
+                AI-powered software engineering, built step by step.
+            </p>
+
+            <div class="footer-links">
+                <a href="#features">Features</a>
+                <a href="#workflow">Workflow</a>
+                <a href="#about">About</a>
+            </div>
+
+            <p class="copyright">
+                © <span id="currentYear">2026</span> SDLC Genius.
+                Built for smarter software development.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>
+
