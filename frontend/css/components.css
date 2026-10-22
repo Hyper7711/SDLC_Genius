@@ -1,0 +1,102 @@
+
+/* =========================================================
+   SDLC GENIUS — COMPONENT STYLES
+   File: frontend/css/components.css
+   ========================================================= */
+
+/* Mobile navigation toggle */
+
+.menu-toggle {
+    width: 43px;
+    height: 43px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 11px;
+    background: var(--bg-card);
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--text-primary);
+    transition:
+        transform var(--transition-fast),
+        opacity var(--transition-fast);
+}
+
+.menu-toggle.active span:first-child {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Keyboard and touch accessibility */
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.feature-card:focus-within,
+.stage-card:focus-within {
+    border-color: var(--border-hover);
+}
+
+/* Selection and subtle surfaces */
+
+.preview-stat,
+.preview-welcome,
+.workflow-step,
+.floating-card {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+/* Dashboard preview details */
+
+.preview-heading h2 {
+    overflow-wrap: anywhere;
+}
+
+.preview-stat strong {
+    color: var(--text-primary);
+}
+
+.preview-status {
+    white-space: nowrap;
+}
+
+.sidebar-item {
+    cursor: default;
+}
+
+/* Interactive link feedback */
+
+.feature-link:focus-visible {
+    border-radius: 3px;
+    outline-offset: 5px;
+}
+
+/* CTA button spacing */
+
+.cta-content .btn {
+    margin-inline: auto;
+}
+
+/* Ensure visual cards don't exceed their parent */
+
+.feature-card,
+.stage-card {
+    overflow-wrap: anywhere;
+}

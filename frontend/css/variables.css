@@ -1,0 +1,89 @@
+
+/* =========================================================
+   SDLC GENIUS — DESIGN VARIABLES
+   File: frontend/css/variables.css
+   ========================================================= */
+
+:root {
+    color-scheme: dark;
+
+    /* Background colors */
+    --bg-primary: #0b1020;
+    --bg-secondary: #10172a;
+    --bg-tertiary: #151e33;
+    --bg-card: rgba(19, 28, 48, 0.78);
+    --bg-card-hover: #17233b;
+
+    /* Brand colors */
+    --color-primary: #8b5cf6;
+    --color-primary-hover: #7c3aed;
+    --color-secondary: #6366f1;
+    --color-cyan: #22d3ee;
+    --color-blue: #60a5fa;
+    --color-pink: #f472b6;
+    --color-green: #4ade80;
+    --color-orange: #fb923c;
+
+    /* Text colors */
+    --text-primary: #f8fafc;
+    --text-secondary: #a5b4cc;
+    --text-muted: #73819b;
+    --text-inverse: #080d1b;
+
+    /* Borders and surfaces */
+    --border-color: rgba(148, 163, 184, 0.15);
+    --border-hover: rgba(139, 92, 246, 0.55);
+    --surface-glass: rgba(15, 23, 42, 0.72);
+
+    /* Gradients */
+    --gradient-brand: linear-gradient(135deg, #a78bfa 0%, #6366f1 55%, #22d3ee 100%);
+    --gradient-button: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    --gradient-background: linear-gradient(180deg, #0b1020 0%, #0e1427 100%);
+
+    /* Typography */
+    --font-primary: "Inter", "Segoe UI", Arial, sans-serif;
+    --font-mono: "Consolas", "Courier New", monospace;
+
+    /* Font sizes */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+
+    /* Layout */
+    --container-width: 1180px;
+    --header-height: 76px;
+    --section-space: 110px;
+
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+
+    /* Corners */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+    --radius-full: 999px;
+
+    /* Shadows */
+    --shadow-card: 0 18px 50px rgba(0, 0, 0, 0.2);
+    --shadow-glow: 0 0 50px rgba(139, 92, 246, 0.15);
+    --shadow-button: 0 10px 30px rgba(99, 102, 241, 0.25);
+
+    /* Transitions */
+    --transition-fast: 160ms ease;
+    --transition-normal: 250ms ease;
+}

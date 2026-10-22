@@ -1,0 +1,477 @@
+
+/* =========================================================
+   SDLC GENIUS — RESPONSIVE STYLES
+   File: frontend/css/responsive.css
+   ========================================================= */
+
+/* ---------- Small laptops ---------- */
+
+@media (max-width: 1100px) {
+    :root {
+        --section-space: 85px;
+    }
+
+    .hero-grid {
+        gap: 35px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.7rem, 5vw, 4rem);
+    }
+
+    .about-grid {
+        gap: 45px;
+    }
+
+    .floating-card-ai {
+        right: -8px;
+    }
+
+    .floating-card-doc {
+        left: -10px;
+    }
+
+    .feature-card {
+        padding: 24px 20px;
+    }
+}
+
+/* ---------- Tablet and compact desktop ---------- */
+
+@media (max-width: 900px) {
+    :root {
+        --section-space: 75px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+        padding: 12px;
+        border: 1px solid var(--border-color);
+        border-radius: 0 0 16px 16px;
+        background: #10172a;
+        box-shadow: var(--shadow-card);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links > a {
+        padding: 12px;
+    }
+
+    .nav-actions {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 8px;
+        margin: 8px 0 0;
+        padding-top: 12px;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .hero {
+        padding-block: 80px 100px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 65px;
+    }
+
+    .hero-content {
+        max-width: 700px;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .hero-content .eyebrow {
+        justify-content: center;
+    }
+
+    .hero-content h1,
+    .hero-description {
+        margin-inline: auto;
+    }
+
+    .hero-actions,
+    .hero-trust {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        width: min(100%, 640px);
+        margin-inline: auto;
+    }
+
+    .feature-grid,
+    .workflow-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .feature-card p {
+        min-height: auto;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .about-visual {
+        width: min(100%, 370px);
+    }
+
+    .about-content {
+        max-width: 650px;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .intro-strip-content {
+        gap: 15px;
+    }
+}
+
+/* ---------- Mobile phones ---------- */
+
+@media (max-width: 600px) {
+    :root {
+        --header-height: 68px;
+        --section-space: 65px;
+    }
+
+    .container {
+        width: calc(100% - 36px);
+    }
+
+    .brand {
+        font-size: 1rem;
+    }
+
+    .brand-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-block: 68px 78px;
+    }
+
+    .hero-grid {
+        gap: 48px;
+    }
+
+    .hero-content .eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.09em;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.4rem, 10vw, 3.5rem);
+    }
+
+    .hero-description {
+        margin-top: 20px;
+        font-size: 0.92rem;
+        line-height: 1.85;
+    }
+
+    .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .hero-trust {
+        align-items: flex-start;
+        font-size: 0.76rem;
+        text-align: left;
+    }
+
+    .dashboard-preview {
+        border-radius: 13px;
+        transform: none;
+    }
+
+    .preview-topbar {
+        min-height: 42px;
+        gap: 9px;
+        padding-inline: 10px;
+    }
+
+    .preview-body {
+        grid-template-columns: 40px minmax(0, 1fr);
+    }
+
+    .preview-sidebar {
+        gap: 17px;
+        padding-inline: 4px;
+    }
+
+    .sidebar-logo {
+        width: 28px;
+        height: 28px;
+    }
+
+    .sidebar-item {
+        width: 28px;
+        height: 28px;
+    }
+
+    .preview-main {
+        padding: 16px 10px;
+    }
+
+    .preview-heading h2 {
+        font-size: 0.98rem;
+    }
+
+    .preview-welcome {
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .preview-welcome strong {
+        font-size: 0.63rem;
+    }
+
+    .preview-welcome p {
+        font-size: 0.55rem;
+    }
+
+    .preview-sparkle {
+        width: 28px;
+        height: 28px;
+    }
+
+    .preview-stat {
+        padding: 10px 8px;
+    }
+
+    .preview-stat > span,
+    .preview-stat small {
+        font-size: 0.52rem;
+    }
+
+    .preview-stat strong {
+        font-size: 1.1rem;
+    }
+
+    .workflow-step {
+        gap: 7px;
+        padding: 8px 6px;
+    }
+
+    .workflow-number {
+        width: 25px;
+        height: 25px;
+        font-size: 0.55rem;
+    }
+
+    .workflow-step strong {
+        font-size: 0.58rem;
+    }
+
+    .workflow-step small {
+        font-size: 0.5rem;
+    }
+
+    .floating-card {
+        gap: 7px;
+        padding: 9px;
+        border-radius: 10px;
+    }
+
+    .floating-card-ai {
+        top: -20px;
+        right: -5px;
+    }
+
+    .floating-card-doc {
+        bottom: -25px;
+        left: -5px;
+    }
+
+    .floating-icon {
+        width: 27px;
+        height: 27px;
+    }
+
+    .floating-card strong {
+        font-size: 0.62rem;
+    }
+
+    .floating-card small {
+        font-size: 0.52rem;
+    }
+
+    .intro-strip-content {
+        min-height: 100px;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        padding-block: 18px;
+    }
+
+    .intro-divider {
+        display: none;
+    }
+
+    .intro-strip-content > span {
+        font-size: 0.64rem;
+    }
+
+    .intro-strip-content p {
+        font-size: 0.82rem;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(1.9rem, 8vw, 2.6rem);
+    }
+
+    .section-heading > p {
+        font-size: 0.88rem;
+    }
+
+    .feature-grid,
+    .workflow-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .feature-card,
+    .stage-card {
+        padding: 23px;
+    }
+
+    .feature-icon {
+        margin-bottom: 17px;
+    }
+
+    .feature-card p {
+        font-size: 0.84rem;
+    }
+
+    .feature-link {
+        margin-top: 14px;
+    }
+
+    .stage-card {
+        min-height: 0;
+    }
+
+    .stage-icon {
+        margin-bottom: 17px;
+    }
+
+    .about-visual {
+        width: min(100%, 310px);
+    }
+
+    .about-core {
+        width: 110px;
+        height: 110px;
+        border-radius: 28px;
+    }
+
+    .orbit-node {
+        width: 45px;
+        height: 45px;
+        border-radius: 13px;
+        font-size: 0.68rem;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+    }
+
+    .about-content p {
+        font-size: 0.88rem;
+    }
+
+    .cta-section {
+        padding-top: 0;
+    }
+
+    .cta-card {
+        padding: 55px 20px;
+        border-radius: 21px;
+    }
+
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+
+    .cta-content p {
+        font-size: 0.86rem;
+    }
+
+    .footer-content {
+        align-items: center;
+        flex-direction: column;
+        gap: 17px;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .footer-content .copyright {
+        line-height: 1.8;
+    }
+}
+
+/* ---------- Very narrow phones ---------- */
+
+@media (max-width: 360px) {
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .hero-content h1 {
+        font-size: 2.25rem;
+    }
+
+    .preview-body {
+        grid-template-columns: 34px minmax(0, 1fr);
+    }
+
+    .preview-main {
+        padding-inline: 7px;
+    }
+
+    .preview-status {
+        font-size: 0.54rem;
+    }
+
+    .floating-card {
+        max-width: 190px;
+    }
+}
