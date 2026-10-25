@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Create your SDLC Genius account and prepare to streamline your software development workflow."
+    >
+
+    <meta name="theme-color" content="#0b1020">
+
+    <title>Create Account | SDLC Genius</title>
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/globals.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+
+<body class="auth-page">
+    <main class="auth-layout">
+        <!-- Branding Panel -->
+        <section class="auth-brand-panel">
+            <a class="brand" href="../index.html">
+                <span class="brand-icon" aria-hidden="true">S</span>
+                <span>SDLC <strong>Genius</strong></span>
+            </a>
+
+            <div class="auth-brand-content">
+                <span class="eyebrow">START YOUR JOURNEY</span>
+
+                <h1>
+                    Your next big idea
+                    <span class="gradient-text">starts here.</span>
+                </h1>
+
+                <p>
+                    Create your account and prepare to bring project
+                    planning, software documentation, and AI-assisted
+                    engineering into one organized workspace.
+                </p>
+
+                <div class="auth-benefits">
+                    <div>
+                        <span class="benefit-check">✓</span>
+                        <span>Keep your software projects organized</span>
+                    </div>
+
+                    <div>
+                        <span class="benefit-check">✓</span>
+                        <span>Plan the software development life cycle</span>
+                    </div>
+
+                    <div>
+                        <span class="benefit-check">✓</span>
+                        <span>Explore AI-powered engineering assistance</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="auth-panel-footer">
+                One workspace. A more structured development journey.
+            </p>
+        </section>
+
+        <!-- Registration Form -->
+        <section class="auth-form-panel">
+            <div class="auth-form-container">
+                <a class="auth-mobile-brand brand" href="../index.html">
+                    <span class="brand-icon" aria-hidden="true">S</span>
+                    <span>SDLC <strong>Genius</strong></span>
+                </a>
+
+                <a class="auth-back-link" href="../index.html">
+                    <span aria-hidden="true">←</span> Back to home
+                </a>
+
+                <div class="auth-heading">
+                    <span class="eyebrow">CREATE YOUR ACCOUNT</span>
+                    <h2>Join SDLC Genius</h2>
+                    <p>Enter your details to get started.</p>
+                </div>
+
+                <form class="auth-form" id="registerForm">
+                    <div class="form-field">
+                        <label for="fullName">Full name</label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            minlength="2"
+                            maxlength="80"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="email">Email address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            maxlength="254"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="password">Password</label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Create a strong password"
+                            autocomplete="new-password"
+                            minlength="8"
+                            maxlength="128"
+                            aria-describedby="passwordHint"
+                            required
+                        >
+
+                        <small class="form-hint" id="passwordHint">
+                            Use at least 8 characters.
+                        </small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="confirmPassword">Confirm password</label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Enter your password again"
+                            autocomplete="new-password"
+                            minlength="8"
+                            maxlength="128"
+                            required
+                        >
+                    </div>
+
+                    <label class="checkbox-field">
+                        <input
+                            type="checkbox"
+                            id="acceptTerms"
+                            name="acceptTerms"
+                            required
+                        >
+                        <span>
+                            I agree to the project terms and responsible-use policy.
+                        </span>
+                    </label>
+
+                    <p
+                        class="auth-message"
+                        id="registerMessage"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+                    <button class="btn btn-primary auth-submit" type="submit">
+                        Create account <span aria-hidden="true">→</span>
+                    </button>
+                </form>
+
+                <p class="auth-switch">
+                    Already have an account?
+                    <a class="form-link" href="login.html">Log in</a>
+                </p>
+
+                <p class="auth-legal">
+                    Your account will be connected to secure backend
+                    authentication in a later development phase.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="../js/auth.js"></script>
+</body>
+</html>

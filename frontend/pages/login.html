@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Sign in to your SDLC Genius workspace."
+    >
+
+    <meta name="theme-color" content="#0b1020">
+
+    <title>Log In | SDLC Genius</title>
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/globals.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+
+<body class="auth-page">
+    <main class="auth-layout">
+        <section class="auth-brand-panel">
+            <a class="brand" href="../index.html">
+                <span class="brand-icon" aria-hidden="true">S</span>
+                <span>SDLC <strong>Genius</strong></span>
+            </a>
+
+            <div class="auth-brand-content">
+                <span class="eyebrow">YOUR SOFTWARE ENGINEERING STUDIO</span>
+
+                <h1>
+                    Turn ideas into
+                    <span class="gradient-text">engineered solutions.</span>
+                </h1>
+
+                <p>
+                    Bring requirements, documentation, architecture,
+                    and testing into one AI-powered development workspace.
+                </p>
+
+                <div class="auth-benefits">
+                    <div>
+                        <span class="benefit-check">✓</span>
+                        <span>Organize software projects</span>
+                    </div>
+
+                    <div>
+                        <span class="benefit-check">✓</span>
+                        <span>Streamline SDLC activities</span>
+                    </div>
+
+                    <div>
+                        <span class="benefit-check">✓</span>
+                        <span>Work toward AI-assisted development</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="auth-panel-footer">
+                Built for a smarter software development journey.
+            </p>
+        </section>
+
+        <section class="auth-form-panel">
+            <div class="auth-form-container">
+                <a class="auth-mobile-brand brand" href="../index.html">
+                    <span class="brand-icon" aria-hidden="true">S</span>
+                    <span>SDLC <strong>Genius</strong></span>
+                </a>
+
+                <a class="auth-back-link" href="../index.html">
+                    <span aria-hidden="true">←</span> Back to home
+                </a>
+
+                <div class="auth-heading">
+                    <span class="eyebrow">WELCOME BACK</span>
+                    <h2>Log in to your account</h2>
+                    <p>Enter your credentials to access your workspace.</p>
+                </div>
+
+                <form class="auth-form" id="loginForm">
+                    <div class="form-field">
+                        <label for="email">Email address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <div class="form-label-row">
+                            <label for="password">Password</label>
+                            <a class="form-link" href="#" id="forgotPasswordLink">
+                                Forgot password?
+                            </a>
+                        </div>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <label class="checkbox-field">
+                        <input type="checkbox" name="remember">
+                        <span>Remember me on this device</span>
+                    </label>
+
+                    <p class="auth-message" id="loginMessage" role="status" aria-live="polite"></p>
+
+                    <button class="btn btn-primary auth-submit" type="submit">
+                        Log in <span aria-hidden="true">→</span>
+                    </button>
+                </form>
+
+                <p class="auth-switch">
+                    Don't have an account?
+                    <a class="form-link" href="register.html">Create an account</a>
+                </p>
+
+                <p class="auth-legal">
+                    By continuing, you agree to use SDLC Genius responsibly.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="../js/auth.js"></script>
+</body>
+</html>
