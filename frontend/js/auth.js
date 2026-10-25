@@ -4,6 +4,8 @@
    File: frontend/js/auth.js
    ========================================================= */
 
+console.log("SDLC Genius auth.js loaded successfully!");
+
 "use strict";
 
 /**
