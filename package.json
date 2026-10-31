@@ -32,6 +32,7 @@
     "saas"
   ],
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "chalk": "^5.4.1",
     "compression": "^1.8.0",
     "cookie-parser": "^1.4.7",
@@ -41,6 +42,7 @@
     "express-rate-limit": "^8.1.0",
     "helmet": "^8.1.0",
     "joi": "^18.0.1",
+    "jsonwebtoken": "^9.0.3",
     "mongoose": "^8.18.0",
     "morgan": "^1.10.1",
     "winston": "^3.19.0"
