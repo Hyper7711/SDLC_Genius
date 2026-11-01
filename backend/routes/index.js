@@ -1,3 +1,6 @@
+
+"use strict";
+
 /**
  * ===============================================================
  * SDLC Genius
@@ -11,6 +14,7 @@
 import { Router } from "express";
 
 import healthRoutes from "./health.routes.js";
+import authRoutes from "./auth.routes.js";
 
 const router = Router();
 
@@ -24,10 +28,17 @@ router.use("/health", healthRoutes);
 
 /**
  * --------------------------------------------------------------
+ * Authentication Routes
+ * --------------------------------------------------------------
+ */
+
+router.use("/auth", authRoutes);
+
+/**
+ * --------------------------------------------------------------
  * Future Routes
  * --------------------------------------------------------------
  *
- * router.use("/auth", authRoutes);
  * router.use("/users", userRoutes);
  * router.use("/projects", projectRoutes);
  * router.use("/ai", aiRoutes);
