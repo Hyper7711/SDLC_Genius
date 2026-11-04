@@ -21,7 +21,7 @@ import {
  * ---------------------------------------------------------------
  * Authentication Controller
  * ---------------------------------------------------------------
- * Handles user registration and login operations.
+ * Handles user registration, login and logout operations.
  * ===============================================================
  */
 
@@ -160,7 +160,7 @@ const loginUser = asyncHandler(async (req, res) => {
         }
     );
 
-    // 6. Configure secure cookie
+    // 6. Configure cookie
     const cookieOptions = {
         httpOnly: true,
         secure: env.NODE_ENV === "production",
@@ -189,7 +189,33 @@ const loginUser = asyncHandler(async (req, res) => {
     );
 });
 
+/**
+ * Logout the current user.
+ * POST /api/v1/auth/logout
+ */
+const logoutUser = asyncHandler(async (req, res) => {
+
+    // 1. Configure cookie clearing options
+    const cookieOptions = {
+        httpOnly: true,
+        secure: env.NODE_ENV === "production",
+        sameSite: "lax",
+        path: "/"
+    };
+
+    // 2. Clear authentication cookie
+    res.clearCookie("sdlc_token", cookieOptions);
+
+    // 3. Send logout response
+    return ApiResponse.success(
+        res,
+        "Logout successful.",
+        null
+    );
+});
+
 export {
     registerUser,
-    loginUser
+    loginUser,
+    logoutUser
 };
