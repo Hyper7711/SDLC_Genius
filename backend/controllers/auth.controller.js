@@ -1,11 +1,19 @@
 
 "use strict";
 
+import jwt from "jsonwebtoken";
+
 import User from "../models/User.js";
 import AppError from "../utils/AppError.js";
 import ApiResponse from "../utils/ApiResponse.js";
 import asyncHandler from "../utils/asyncHandler.js";
-import { registerSchema } from "../validators/auth.validator.js";
+
+import { env } from "../config/index.js";
+
+import {
+    registerSchema,
+    loginSchema
+} from "../validators/auth.validator.js";
 
 /**
  * ===============================================================
@@ -13,7 +21,7 @@ import { registerSchema } from "../validators/auth.validator.js";
  * ---------------------------------------------------------------
  * Authentication Controller
  * ---------------------------------------------------------------
- * Handles user registration and authentication operations.
+ * Handles user registration and login operations.
  * ===============================================================
  */
 
@@ -43,7 +51,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
     const { fullName, email, password } = value;
 
-    // 2. Check whether the email already exists
+    // 2. Check existing email
     const existingUser = await User.findOne({ email });
 
     if (existingUser) {
@@ -52,8 +60,7 @@ const registerUser = asyncHandler(async (req, res) => {
         );
     }
 
-    // 3. Create the user
-    // Password hashing is handled by User.js middleware.
+    // 3. Create user
     let user;
 
     try {
@@ -63,7 +70,6 @@ const registerUser = asyncHandler(async (req, res) => {
             password
         });
     } catch (err) {
-        // Handle duplicate email in case of simultaneous requests.
         if (err.code === 11000) {
             throw AppError.conflict(
                 "An account with this email address already exists."
@@ -73,7 +79,7 @@ const registerUser = asyncHandler(async (req, res) => {
         throw err;
     }
 
-    // 4. Prepare safe user data
+    // 4. Safe response data
     const safeUser = {
         id: user._id,
         fullName: user.fullName,
@@ -82,7 +88,7 @@ const registerUser = asyncHandler(async (req, res) => {
         createdAt: user.createdAt
     };
 
-    // 5. Send success response
+    // 5. Send response
     return ApiResponse.success(
         res,
         "Your account has been created successfully.",
@@ -91,6 +97,99 @@ const registerUser = asyncHandler(async (req, res) => {
     );
 });
 
+/**
+ * Login an existing user.
+ * POST /api/v1/auth/login
+ */
+const loginUser = asyncHandler(async (req, res) => {
+
+    // 1. Validate login data
+    const { error, value } = loginSchema.validate(req.body, {
+        abortEarly: false,
+        convert: true
+    });
+
+    if (error) {
+        const details = error.details.map((item) => ({
+            field: item.path.join("."),
+            message: item.message
+        }));
+
+        throw AppError.validation(
+            "Login validation failed.",
+            details
+        );
+    }
+
+    const { email, password } = value;
+
+    // 2. Find user and include password
+    const user = await User.findOne({ email }).select("+password");
+
+    if (!user) {
+        throw AppError.unauthorized(
+            "Invalid email or password."
+        );
+    }
+
+    // 3. Check account status
+    if (!user.isActive) {
+        throw AppError.forbidden(
+            "Your account is inactive."
+        );
+    }
+
+    // 4. Compare password
+    const isPasswordCorrect = await user.comparePassword(password);
+
+    if (!isPasswordCorrect) {
+        throw AppError.unauthorized(
+            "Invalid email or password."
+        );
+    }
+
+    // 5. Generate JWT
+    const token = jwt.sign(
+        {
+            role: user.role
+        },
+        env.JWT_SECRET,
+        {
+            subject: user._id.toString(),
+            expiresIn: env.JWT_EXPIRES_IN
+        }
+    );
+
+    // 6. Configure secure cookie
+    const cookieOptions = {
+        httpOnly: true,
+        secure: env.NODE_ENV === "production",
+        sameSite: "lax",
+        path: "/",
+        maxAge: 7 * 24 * 60 * 60 * 1000
+    };
+
+    // 7. Set JWT cookie
+    res.cookie("sdlc_token", token, cookieOptions);
+
+    // 8. Safe user data
+    const safeUser = {
+        id: user._id,
+        fullName: user.fullName,
+        email: user.email,
+        role: user.role,
+        createdAt: user.createdAt
+    };
+
+    // 9. Send successful response
+    return ApiResponse.success(
+        res,
+        "Login successful.",
+        { user: safeUser }
+    );
+});
+
 export {
-    registerUser
+    registerUser,
+    loginUser
 };
