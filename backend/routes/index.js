@@ -15,6 +15,7 @@ import { Router } from "express";
 
 import healthRoutes from "./health.routes.js";
 import authRoutes from "./auth.routes.js";
+import userRoutes from "./user.routes.js";
 
 const router = Router();
 
@@ -36,10 +37,17 @@ router.use("/auth", authRoutes);
 
 /**
  * --------------------------------------------------------------
+ * User Management Routes
+ * --------------------------------------------------------------
+ */
+
+router.use("/users", userRoutes);
+
+/**
+ * --------------------------------------------------------------
  * Future Routes
  * --------------------------------------------------------------
  *
- * router.use("/users", userRoutes);
  * router.use("/projects", projectRoutes);
  * router.use("/ai", aiRoutes);
  * router.use("/docs", docsRoutes);
