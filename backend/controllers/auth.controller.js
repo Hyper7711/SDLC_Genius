@@ -214,8 +214,53 @@ const logoutUser = asyncHandler(async (req, res) => {
     );
 });
 
+
+/**
+ * Get the currently authenticated user's profile.
+ * GET /api/v1/auth/me
+ */
+const getCurrentUser = asyncHandler(async (req, res) => {
+
+    // 1. Get authenticated user ID
+    const userId = req.user.id;
+
+    // 2. Find user in database
+    const user = await User.findById(userId);
+
+    if (!user) {
+        throw AppError.unauthorized(
+            "User account not found."
+        );
+    }
+
+    // 3. Check account status
+    if (!user.isActive) {
+        throw AppError.forbidden(
+            "Your account is inactive."
+        );
+    }
+
+    // 4. Prepare safe user data
+    const safeUser = {
+        id: user._id,
+        fullName: user.fullName,
+        email: user.email,
+        role: user.role,
+        createdAt: user.createdAt
+    };
+
+    // 5. Send response
+    return ApiResponse.success(
+        res,
+        "User profile retrieved successfully.",
+        { user: safeUser }
+    );
+});
+
+
 export {
     registerUser,
     loginUser,
-    logoutUser
+    logoutUser,
+    getCurrentUser
 };
