@@ -3,7 +3,11 @@
 
 import { Router } from "express";
 
-import { getAllUsers } from "../controllers/user.controller.js";
+import {
+    getAllUsers,
+    getUserById
+} from "../controllers/user.controller.js";
+
 import { authenticateUser } from "../middleware/auth.middleware.js";
 import { authorizeRoles } from "../middleware/role.middleware.js";
 
@@ -25,6 +29,14 @@ router.get(
     authenticateUser,
     authorizeRoles("admin"),
     getAllUsers
+);
+
+// Get a registered user by ID
+router.get(
+    "/:id",
+    authenticateUser,
+    authorizeRoles("admin"),
+    getUserById
 );
 
 export default router;
