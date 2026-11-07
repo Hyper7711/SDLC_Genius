@@ -5,7 +5,8 @@ import { Router } from "express";
 
 import {
     getAllUsers,
-    getUserById
+    getUserById,
+    updateUser
 } from "../controllers/user.controller.js";
 
 import { authenticateUser } from "../middleware/auth.middleware.js";
@@ -37,6 +38,14 @@ router.get(
     authenticateUser,
     authorizeRoles("admin"),
     getUserById
+);
+
+// Update a registered user
+router.patch(
+    "/:id",
+    authenticateUser,
+    authorizeRoles("admin"),
+    updateUser
 );
 
 export default router;
