@@ -230,5 +230,6 @@ const updateUser = asyncHandler(async (req, res) => {
 
 export {
     getAllUsers,
-    getUserById
+    getUserById,
+    updateUser
 };
