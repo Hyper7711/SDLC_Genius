@@ -282,3 +282,18 @@
     at C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:295:15
     at param (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:600:14)
 2026-11-07 12:47:58 [error] : =================================================
+2026-11-08 10:20:37 [error] : =================================================
+2026-11-08 10:20:37 [error] : POST /api/v1/auth/register
+2026-11-08 10:20:37 [error] : Registration validation failed.
+2026-11-08 10:20:37 [error] : AppError: Registration validation failed.
+    at AppError.validation (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/AppError.js:71:16)
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/controllers/auth.controller.js:46:24
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/asyncHandler.js:23:25
+    at Layer.handleRequest (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:295:15
+    at processParams (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:582:12)
+2026-11-08 10:20:37 [error] : =================================================
