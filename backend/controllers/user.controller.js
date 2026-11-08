@@ -228,8 +228,53 @@ const updateUser = asyncHandler(async (req, res) => {
     );
 });
 
+
+/**
+ * Delete a registered user.
+ * DELETE /api/v1/users/:id
+ */
+const deleteUser = asyncHandler(async (req, res) => {
+    const { id } = req.params;
+
+    // Validate user ID
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        throw AppError.badRequest("Invalid user ID.");
+    }
+
+    // Prevent admin from deleting their own account
+    if (req.user.id === id) {
+        throw AppError.badRequest(
+            "You cannot delete your own account."
+        );
+    }
+
+    // Find and delete user
+    const user = await User.findByIdAndDelete(id);
+
+    // Check if user exists
+    if (!user) {
+        throw AppError.notFound("User not found.");
+    }
+
+    // Return success response
+    return ApiResponse.success(
+        res,
+        "User deleted successfully.",
+        {
+            user: {
+                id: user._id,
+                fullName: user.fullName,
+                email: user.email,
+                role: user.role
+            }
+        }
+    );
+});
+
+
 export {
     getAllUsers,
     getUserById,
-    updateUser
+    updateUser,
+    deleteUser
 };
