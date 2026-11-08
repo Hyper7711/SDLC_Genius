@@ -6,7 +6,8 @@ import { Router } from "express";
 import {
     getAllUsers,
     getUserById,
-    updateUser
+    updateUser,
+    deleteUser
 } from "../controllers/user.controller.js";
 
 import { authenticateUser } from "../middleware/auth.middleware.js";
@@ -46,6 +47,14 @@ router.patch(
     authenticateUser,
     authorizeRoles("admin"),
     updateUser
+);
+
+// Delete a registered user
+router.delete(
+    "/:id",
+    authenticateUser,
+    authorizeRoles("admin"),
+    deleteUser
 );
 
 export default router;
