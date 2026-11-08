@@ -297,3 +297,33 @@
     at C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:295:15
     at processParams (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:582:12)
 2026-11-08 10:20:37 [error] : =================================================
+2026-11-08 10:23:06 [error] : =================================================
+2026-11-08 10:23:06 [error] : GET /api/v1/users
+2026-11-08 10:23:06 [error] : Authentication required. Please login.
+2026-11-08 10:23:06 [error] : AppError: Authentication required. Please login.
+    at AppError.unauthorized (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/AppError.js:55:16)
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/middleware/auth.middleware.js:37:24
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/asyncHandler.js:23:25
+    at Layer.handleRequest (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:295:15
+    at processParams (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:582:12)
+2026-11-08 10:23:06 [error] : =================================================
+2026-11-08 10:25:20 [error] : =================================================
+2026-11-08 10:25:20 [error] : DELETE /api/v1/users/invalid123
+2026-11-08 10:25:20 [error] : Invalid user ID.
+2026-11-08 10:25:20 [error] : AppError: Invalid user ID.
+    at AppError.badRequest (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/AppError.js:51:16)
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/controllers/user.controller.js:241:24
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/asyncHandler.js:23:25
+    at Layer.handleRequest (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/middleware/role.middleware.js:45:16
+    at Layer.handleRequest (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/middleware/auth.middleware.js:89:5
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-08 10:25:20 [error] : =================================================
