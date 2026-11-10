@@ -361,3 +361,111 @@
     at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/middleware/auth.middleware.js:89:5
     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
 2026-11-08 10:28:30 [error] : =================================================
+2026-11-10 11:12:54 [error] : =================================================
+2026-11-10 11:12:54 [error] : POST /api/v1/projects
+2026-11-10 11:12:54 [error] : Authentication required. Please login.
+2026-11-10 11:12:54 [error] : AppError: Authentication required. Please login.
+    at AppError.unauthorized (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/AppError.js:55:16)
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/middleware/auth.middleware.js:37:24
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/asyncHandler.js:23:25
+    at Layer.handleRequest (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:295:15
+    at processParams (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:582:12)
+2026-11-10 11:12:54 [error] : =================================================
+2026-11-10 11:14:28 [error] : =================================================
+2026-11-10 11:14:28 [error] : POST /api/v1/projects
+2026-11-10 11:14:28 [error] : Authentication required. Please login.
+2026-11-10 11:14:28 [error] : AppError: Authentication required. Please login.
+    at AppError.unauthorized (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/AppError.js:55:16)
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/middleware/auth.middleware.js:37:24
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/asyncHandler.js:23:25
+    at Layer.handleRequest (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:295:15
+    at processParams (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:582:12)
+2026-11-10 11:14:28 [error] : =================================================
+2026-11-10 11:21:18 [error] : =================================================
+2026-11-10 11:21:18 [error] : GET /api/v1/projects/invalid123
+2026-11-10 11:21:18 [error] : Invalid project ID.
+2026-11-10 11:21:18 [error] : AppError: Invalid project ID.
+    at AppError.badRequest (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/AppError.js:51:16)
+    at getProjectById (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/services/project.service.js:57:24)
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/controllers/project.controller.js:63:27
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/asyncHandler.js:23:25
+    at Layer.handleRequest (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/middleware/auth.middleware.js:89:5
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-10 11:21:18 [error] : =================================================
+2026-11-10 11:22:01 [error] : =================================================
+2026-11-10 11:22:01 [error] : GET /api/v1/projects/507f1f77bcf86cd799439011
+2026-11-10 11:22:01 [error] : Project not found.
+2026-11-10 11:22:01 [error] : AppError: Project not found.
+    at AppError.notFound (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/AppError.js:63:16)
+    at getProjectById (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/services/project.service.js:66:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/controllers/project.controller.js:63:21
+2026-11-10 11:22:01 [error] : =================================================
+2026-11-10 11:22:25 [error] : =================================================
+2026-11-10 11:22:25 [error] : POST /api/v1/projects
+2026-11-10 11:22:25 [error] : Validation failed.
+2026-11-10 11:22:25 [error] : ValidationError: Project validation failed: name: Project name is required.
+    at Document.invalidate (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\mongoose\lib\document.js:3387:32)
+    at C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\mongoose\lib\document.js:3148:17
+    at C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\mongoose\lib\schemaType.js:1443:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-11-10 11:22:25 [error] : =================================================
+2026-11-10 11:22:52 [error] : =================================================
+2026-11-10 11:22:52 [error] : PATCH /api/v1/projects/6af2afbb418a5216f3eead58
+2026-11-10 11:22:52 [error] : Validation failed.
+2026-11-10 11:22:52 [error] : ValidationError: Validation failed: status: `invalid-status` is not a valid enum value for path `status`.
+    at _done (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\mongoose\lib\helpers\updateValidators.js:227:19)
+    at C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\mongoose\lib\helpers\updateValidators.js:203:11
+    at schemaPath.doValidate.updateValidator (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\mongoose\lib\helpers\updateValidators.js:161:13)
+    at C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\mongoose\lib\schemaType.js:1443:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-11-10 11:22:52 [error] : =================================================
+2026-11-10 11:24:11 [error] : =================================================
+2026-11-10 11:24:11 [error] : PATCH /api/v1/projects/6af2b15b418a5216f3eead6d
+2026-11-10 11:24:11 [error] : Validation failed.
+2026-11-10 11:24:11 [error] : ValidationError: Validation failed: status: `invalid-status` is not a valid enum value for path `status`.
+    at _done (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\mongoose\lib\helpers\updateValidators.js:227:19)
+    at C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\mongoose\lib\helpers\updateValidators.js:203:11
+    at schemaPath.doValidate.updateValidator (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\mongoose\lib\helpers\updateValidators.js:161:13)
+    at C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\mongoose\lib\schemaType.js:1443:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-11-10 11:24:11 [error] : =================================================
+2026-11-10 11:25:37 [error] : =================================================
+2026-11-10 11:25:37 [error] : GET /api/v1/projects/6af2b15b418a5216f3eead6d
+2026-11-10 11:25:37 [error] : Project not found.
+2026-11-10 11:25:37 [error] : AppError: Project not found.
+    at AppError.notFound (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/AppError.js:63:16)
+    at getProjectById (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/services/project.service.js:66:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/controllers/project.controller.js:63:21
+2026-11-10 11:25:37 [error] : =================================================
+2026-11-10 11:26:01 [error] : =================================================
+2026-11-10 11:26:01 [error] : PATCH /api/v1/projects/6af2b15b418a5216f3eead6d
+2026-11-10 11:26:01 [error] : Project not found.
+2026-11-10 11:26:01 [error] : AppError: Project not found.
+    at AppError.notFound (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/AppError.js:63:16)
+    at updateProject (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/services/project.service.js:100:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/controllers/project.controller.js:80:21
+2026-11-10 11:26:01 [error] : =================================================
+2026-11-10 11:26:27 [error] : =================================================
+2026-11-10 11:26:27 [error] : DELETE /api/v1/projects/6af2b15b418a5216f3eead6d
+2026-11-10 11:26:27 [error] : Project not found.
+2026-11-10 11:26:27 [error] : AppError: Project not found.
+    at AppError.notFound (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/AppError.js:63:16)
+    at deleteProject (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/services/project.service.js:124:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/controllers/project.controller.js:98:21
+2026-11-10 11:26:27 [error] : =================================================
