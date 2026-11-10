@@ -16,6 +16,7 @@ import { Router } from "express";
 import healthRoutes from "./health.routes.js";
 import authRoutes from "./auth.routes.js";
 import userRoutes from "./user.routes.js";
+import projectRoutes from "./project.routes.js";
 
 const router = Router();
 
@@ -42,6 +43,14 @@ router.use("/auth", authRoutes);
  */
 
 router.use("/users", userRoutes);
+
+/**
+ * --------------------------------------------------------------
+ * Project Management Routes
+ * --------------------------------------------------------------
+ */
+
+router.use("/projects", projectRoutes);
 
 /**
  * --------------------------------------------------------------
