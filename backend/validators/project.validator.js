@@ -3,6 +3,15 @@
 
 import Joi from "joi";
 
+// Allowed project statuses
+const projectStatuses = [
+    "planning",
+    "in-progress",
+    "completed",
+    "on-hold",
+    "cancelled"
+];
+
 // Create project validation schema
 const createProjectSchema = Joi.object({
     name: Joi.string()
@@ -23,6 +32,13 @@ const createProjectSchema = Joi.object({
         .default("")
         .messages({
             "string.max": "Project description cannot exceed 2000 characters."
+        }),
+
+    status: Joi.string()
+        .valid(...projectStatuses)
+        .default("planning")
+        .messages({
+            "any.only": "Please provide a valid project status."
         })
 }).unknown(false);
 
@@ -47,13 +63,7 @@ const updateProjectSchema = Joi.object({
         }),
 
     status: Joi.string()
-        .valid(
-            "planning",
-            "in-progress",
-            "completed",
-            "on-hold",
-            "cancelled"
-        )
+        .valid(...projectStatuses)
         .messages({
             "any.only": "Please provide a valid project status."
         })

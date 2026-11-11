@@ -12,6 +12,12 @@ import {
 } from "../controllers/project.controller.js";
 
 import { authenticateUser } from "../middleware/auth.middleware.js";
+import validate from "../middleware/validation.middleware.js";
+
+import {
+    createProjectSchema,
+    updateProjectSchema
+} from "../validators/project.validator.js";
 
 const router = Router();
 
@@ -29,6 +35,7 @@ const router = Router();
 router.post(
     "/",
     authenticateUser,
+    validate(createProjectSchema),
     createProject
 );
 
@@ -50,6 +57,7 @@ router.get(
 router.patch(
     "/:id",
     authenticateUser,
+    validate(updateProjectSchema),
     updateProject
 );
 

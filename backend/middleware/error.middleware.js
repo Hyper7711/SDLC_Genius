@@ -1,22 +1,5 @@
-/**
- * ===============================================================
- * SDLC Genius
- * ---------------------------------------------------------------
- * Global Error Middleware
- * ---------------------------------------------------------------
- * Handles every unhandled error in the application.
- *
- * Responsibilities:
- *  - Handle AppError
- *  - Handle Mongoose errors
- *  - Handle unexpected errors
- *  - Log errors
- *  - Return standardized API responses
- *
- * NOTE:
- * This MUST be the last middleware registered.
- * ===============================================================
- */
+
+"use strict";
 
 import ApiResponse from "../utils/ApiResponse.js";
 
@@ -28,23 +11,9 @@ import {
 
 /**
  * Global Error Handler
- *
- * @param {Error} err
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- * @param {import("express").NextFunction} next
  */
 const errorMiddleware = (err, req, res, next) => {
-    /**
-     * Prevent ESLint warning.
-     */
     void next;
-
-    /**
-     * ------------------------------------------------------------
-     * Default Error
-     * ------------------------------------------------------------
-     */
 
     let statusCode =
         err.statusCode ||
@@ -58,72 +27,70 @@ const errorMiddleware = (err, req, res, next) => {
         err.details || null;
 
     /**
-     * ------------------------------------------------------------
      * Mongoose Validation Error
-     * ------------------------------------------------------------
      */
-
     if (err.name === "ValidationError") {
         statusCode = constants.HTTP_STATUS.BAD_REQUEST;
         message = "Validation failed.";
-        details = err.errors;
+
+        details = Object.values(err.errors).map((error) => ({
+            field: error.path,
+            message: error.message
+        }));
     }
 
     /**
-     * ------------------------------------------------------------
      * Invalid MongoDB ObjectId
-     * ------------------------------------------------------------
      */
-
     if (err.name === "CastError") {
         statusCode = constants.HTTP_STATUS.BAD_REQUEST;
         message = "Invalid resource identifier.";
+        details = null;
     }
 
     /**
-     * ------------------------------------------------------------
      * Duplicate Key Error
-     * ------------------------------------------------------------
      */
-
     if (err.code === 11000) {
         statusCode = constants.HTTP_STATUS.CONFLICT;
         message = "Duplicate resource detected.";
-        details = err.keyValue;
+        details = null;
     }
 
     /**
-     * ------------------------------------------------------------
-     * Development Logging
-     * ------------------------------------------------------------
+     * Unexpected Server Errors
      */
+    if (statusCode >= 500) {
+        message = "Internal Server Error";
+        details = null;
+    }
 
+    /**
+     * Server-side Error Logging
+     */
     logger.error("=================================================");
     logger.error(`${req.method} ${req.originalUrl}`);
     logger.error(message);
-
-    if (env.NODE_ENV === "development") {
-        logger.error(err.stack);
-    }
+    logger.error(err.stack || err);
 
     logger.error("=================================================");
 
     /**
-     * ------------------------------------------------------------
-     * Standardized Error Response
-     * ------------------------------------------------------------
+     * Client Error Response
      */
+    const responseErrors =
+        env.NODE_ENV === "development"
+            ? {
+                  details,
+                  stack: err.stack || null
+              }
+            : null;
 
     return ApiResponse.error(
         res,
         message,
         statusCode,
-        env.NODE_ENV === "development"
-            ? {
-                  details,
-                  stack: err.stack,
-              }
-            : details
+        responseErrors
     );
 };
 
