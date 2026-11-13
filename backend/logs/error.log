@@ -484,3 +484,48 @@
     at C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:295:15
     at processParams (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:582:12)
 2026-11-11 17:21:31 [error] : =================================================
+2026-11-13 12:36:28 [error] : =================================================
+2026-11-13 12:36:28 [error] : GET /api/v1/projects/invalid123
+2026-11-13 12:36:28 [error] : Authentication required. Please login.
+2026-11-13 12:36:28 [error] : AppError: Authentication required. Please login.
+    at AppError.unauthorized (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/AppError.js:55:16)
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/middleware/auth.middleware.js:37:24
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/asyncHandler.js:23:25
+    at Layer.handleRequest (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:295:15
+    at param (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:600:14)
+2026-11-13 12:36:28 [error] : =================================================
+2026-11-13 12:37:40 [error] : =================================================
+2026-11-13 12:37:40 [error] : GET /api/v1/projects/invalid123
+2026-11-13 12:37:40 [error] : Invalid project ID.
+2026-11-13 12:37:40 [error] : AppError: Invalid project ID.
+    at AppError.badRequest (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/AppError.js:51:16)
+    at getProjectById (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/services/project.service.js:57:24)
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/controllers/project.controller.js:63:27
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/asyncHandler.js:23:25
+    at Layer.handleRequest (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/middleware/auth.middleware.js:89:5
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-13 12:37:40 [error] : =================================================
+2026-11-13 12:38:06 [error] : =================================================
+2026-11-13 12:38:06 [error] : GET /api/v1/projects
+2026-11-13 12:38:06 [error] : Authentication required. Please login.
+2026-11-13 12:38:06 [error] : AppError: Authentication required. Please login.
+    at AppError.unauthorized (file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/AppError.js:55:16)
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/middleware/auth.middleware.js:37:24
+    at file:///C:/Users/VICTUS/OneDrive/Desktop/GIT_REPOS/SDLC_Genius/backend/utils/asyncHandler.js:23:25
+    at Layer.handleRequest (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:295:15
+    at processParams (C:\Users\VICTUS\OneDrive\Desktop\GIT_REPOS\SDLC_Genius\node_modules\router\index.js:582:12)
+2026-11-13 12:38:06 [error] : =================================================
+2026-11-13 12:41:55 [error] : HTTP Server Error
+2026-11-13 12:46:57 [error] : HTTP Server Error
